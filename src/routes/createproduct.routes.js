@@ -5,7 +5,7 @@ const productsModel = require("../models/products.model");
 router.post("/products", async (req, res) => {
   try {
     const response = await productsModel.createProduct(req.body);
-    res.json(response);
+    res.status(201).json(response);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
