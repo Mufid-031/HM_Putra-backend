@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const searchModel = require("../models/search.model");
 
-router.get("/products", async (req, res) => {
+router.get("/product", async (req, res) => {
   try {
     const { nameProduct } = req.query;
     const products = await searchModel.getProductByName(nameProduct);
