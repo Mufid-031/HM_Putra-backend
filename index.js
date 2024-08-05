@@ -7,7 +7,8 @@ const updateProduct = require("./src/routes/updateproduct.routes");
 require("dotenv").config();
 
 const app = express();
-const port = process.env.PORT || 5000;
+// process.env.PORT ||
+const port = 5000;
 // const prisma = new PrismaClient()
 
 app.use(express.json());
@@ -15,9 +16,9 @@ app.use(cors());
 
 // app.set("view engine", "ejs");
 
-// app.get("/", (req, res) => {
-//   res.render("tes");
-// });
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
 
 app.use(createProduct);
 app.use(getProducts);
