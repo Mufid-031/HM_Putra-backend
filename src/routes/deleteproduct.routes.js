@@ -3,8 +3,10 @@ const router = express.Router();
 const productsModel = require("../models/products.model");
 
 router.delete("/products/:id", async (req, res) => {
+  const { id } = req.params;
+
   try {
-    const product = await productsModel.deleteProduct(req.params);
+    const product = await productsModel.deleteProduct(id);
     res.status(200).json(product);
   } catch (error) {
     console.error(error);
