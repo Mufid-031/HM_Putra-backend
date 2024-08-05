@@ -3,7 +3,7 @@ const router = express.Router();
 const productsModel = require("../models/products.model");
 
 router.post("/products", async (req, res) => {
-  const {nameProduct, categoryProduct, priceProduct, categoryPriceProduct} = req.body;
+  const { nameProduct, categoryProduct, priceProduct, categoryPriceProduct } = req.body;
 
   try {
     const response = await productsModel.createProduct(nameProduct, categoryProduct, priceProduct, categoryPriceProduct);
