@@ -13,11 +13,11 @@ const port = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cors());
 
-app.set("view engine", "ejs");
+// app.set("view engine", "ejs");
 
-app.get("/", (req, res) => {
-  res.render("tes");
-});
+// app.get("/", (req, res) => {
+//   res.render("tes");
+// });
 
 app.use(createProduct);
 app.use(getProducts);
