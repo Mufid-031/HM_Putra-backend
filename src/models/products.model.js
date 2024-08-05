@@ -1,5 +1,4 @@
 const { PrismaClient } = require("@prisma/client");
-
 const prisma = new PrismaClient();
 
 const createProduct = async (nameProduct, categoryProduct, priceProduct, categoryPriceProduct) => {
@@ -7,7 +6,7 @@ const createProduct = async (nameProduct, categoryProduct, priceProduct, categor
     data: {
       nameProduct: nameProduct,
       categoryProduct: categoryProduct,
-      priceProduct: priceProduct,
+      priceProduct: parseInt(priceProduct),
       categoryPriceProduct: categoryPriceProduct,
     },
   });

@@ -5,6 +5,9 @@ const createProduct = require("./src/routes/createproduct.routes");
 const getProducts = require("./src/routes/getproducts.routes");
 const deleteProduct = require("./src/routes/deleteproduct.routes");
 const updateProduct = require("./src/routes/updateproduct.routes");
+const getNameProduct = require("./src/routes/getnameproduct.routes");
+const getProductPrice = require("./src/routes/getproductprice.routes");
+
 require("dotenv").config();
 
 // process.env.PORT ||
@@ -24,6 +27,9 @@ app.use(createProduct);
 app.use(getProducts);
 app.use(deleteProduct);
 app.use(updateProduct);
+app.use(getNameProduct);
+app.use(getProductPrice);
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
