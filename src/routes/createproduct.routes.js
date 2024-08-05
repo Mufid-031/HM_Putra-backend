@@ -7,6 +7,7 @@ router.post("/products", async (req, res) => {
     const response = await productsModel.createProduct(req.body);
     res.status(201).json(response);
   } catch (error) {
+    console.error(error);
     res.status(500).json({ message: error.message });
   }
 });

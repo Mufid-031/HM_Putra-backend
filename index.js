@@ -1,4 +1,5 @@
 const express = require("express");
+const app = express();
 const cors = require("cors");
 const createProduct = require("./src/routes/createproduct.routes");
 const getProducts = require("./src/routes/getproducts.routes");
@@ -6,9 +7,8 @@ const deleteProduct = require("./src/routes/deleteproduct.routes");
 const updateProduct = require("./src/routes/updateproduct.routes");
 require("dotenv").config();
 
-const app = express();
 // process.env.PORT ||
-const port = 5000;
+const port = 3000;
 // const prisma = new PrismaClient()
 
 app.use(express.json());

@@ -7,6 +7,7 @@ router.delete("/products/:id", async (req, res) => {
     const product = await productsModel.deleteProduct(req.params);
     res.status(200).json(product);
   } catch (error) {
+    console.error(error);
     res.status(500).json({ message: error.message });
   }
 });
