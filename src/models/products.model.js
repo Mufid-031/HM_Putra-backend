@@ -3,51 +3,36 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
 const createProduct = async ({ nameProduct, categoryProduct, priceProduct, categoryPriceProduct }) => {
-  try {
-    const product = await prisma.product.create({
-      data: {
-        nameProduct,
-        categoryProduct,
-        priceProduct,
-        categoryPriceProduct,
-      },
-    });
-    return product;
-  } catch (error) {
-    throw error;
-  }
+  return prisma.product.create({
+    data: {
+      nameProduct,
+      categoryProduct,
+      priceProduct,
+      categoryPriceProduct,
+    },
+  });
 };
 
 const getProducts = async () => {
-  return await prisma.product.findMany();
+  return prisma.product.findMany();
 };
 
 const updateProduct = async ({ id }, { nameProduct, categoryProduct, priceProduct, categoryPriceProduct }) => {
-  try {
-    const product = await prisma.product.update({
-      where: { id: id },
-      data: {
-        nameProduct,
-        categoryProduct,
-        priceProduct,
-        categoryPriceProduct,
-      },
-    });
-    return product;
-  } catch (error) {
-    throw error;
-  }
+  return prisma.product.update({
+    where: { id: id },
+    data: {
+      nameProduct,
+      categoryProduct,
+      priceProduct,
+      categoryPriceProduct,
+    },
+  });
 };
 
 const deleteProduct = async ({ id }) => {
-  try {
-    const product = await prisma.product.delete({
-      where: { id: id },
-    });
-    return product;
-  } catch (error) {
-    throw error;
-  }
+  return prisma.product.delete({
+    where: { id: id },
+  });
 };
 
 module.exports = { createProduct, getProducts, updateProduct, deleteProduct };
